@@ -1,0 +1,29 @@
+<div class="container mx-auto p-4">
+    <div class="gap-4">
+      <div
+        class="bg-card rounded-lg shadow-lg cursor-pointer"
+        (click)="openCardDetais()"
+      >
+        <img
+          src="https://placehold.co/300x200.png?text=Chicken+Mayo"
+          alt="Chicken Mayo"
+          class="rounded-t-lg w-full"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">{{ product.name }}</h3>
+          <p class="text-muted-foreground">Serves {{ product.serves }} person(s)</p>
+          <p class="text-primary">From ${{ product.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+@if(showCardDetails){
+  <app-modal>
+    <app-card-details
+      [product]="product"
+      (close)="closeCartDetails()"
+    ></app-card-details>
+  </app-modal>
+}  
+  

@@ -1,0 +1,36 @@
+<div class="p-4">
+    <h3 class="text-lg font-semibold">WEEKLY PROMOTIONS</h3>
+</div>
+<div class="items-list">
+    @for(product of products; track product.id){
+        <div class="item">
+            <app-card [product]="product"></app-card>
+        </div>
+    }
+</div>
+
+
+
+<div class="p-4">
+    <h3 class="text-lg font-semibold">PORTIONS</h3>
+</div>
+<div class="items-list">
+    @for(product of products; track product.id){
+        <div class="item">
+            <app-card [product]="product"></app-card>
+        </div>
+    }
+</div>
+
+
+
+<div class="p-4">
+    <h3 class="text-lg font-semibold">DRINKS</h3>
+</div>
+<div class="items-list">
+    @for(product of products; track product.id){
+        <div class="item">
+            <app-card [product]="product"></app-card>
+        </div>
+    }
+</div>

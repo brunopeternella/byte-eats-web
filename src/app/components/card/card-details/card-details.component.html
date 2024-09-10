@@ -1,0 +1,27 @@
+<div class="flex justify-between mt-4">
+  <h2 class="text-xl font-bold">{{ product.name }}</h2>
+  <button (click)="closeModal()">✖</button>
+</div>
+<p class="mt-2">{{ product.description }}</p>
+<div class="mt-4">
+  <label class="block text-sm">Condiments:</label>
+  <select class="mt-1 block w-full border border-border rounded-md">
+    <option>Choose up to 1 option</option>
+    <!-- @for(additional of product.additionals; track product.additionals){
+      <option>{{additional.name}} - R$ {{additional.value}}</option>
+    } -->
+  </select>
+</div>
+<div class="mt-4">
+  <label class="block text-sm">Item notes:</label>
+  <textarea class="mt-1 block w-full border border-border rounded-md" rows="3" maxlength="250"></textarea>
+</div>
+<div class="flex items-center justify-between mt-4">
+  <div>
+    <label class="block text-sm">Quantity:</label>
+    <input [(ngModel)]="quantity" type="number" class="mt-1 block w-16 border border-border rounded-md" />
+  </div>
+  <button (click)="onAddToCart()" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg">
+    Add + ${{ totalPrice }}
+  </button>
+</div>

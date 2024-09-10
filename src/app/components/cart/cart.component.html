@@ -1,0 +1,17 @@
+<div class="flex justify-between mt-4">
+    <div class="text-lg font-semibold">Your Cart</div>  
+    <button (click)="closeModal()">✖</button>
+</div>
+
+@for(item of items; track item.id){
+    <app-cart-item
+        [item]="item">
+    </app-cart-item>
+}
+
+<div class="flex justify-between mt-4">
+  <p class="text-lg">Total:</p>
+  <p class="text-lg">${{ totalPrice }}</p>
+</div>
+
+<button class="bg-primary text-primary-foreground w-full py-2 mt-4 rounded-lg hover:bg-primary/80">Confirm</button>
