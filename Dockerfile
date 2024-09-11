@@ -7,4 +7,4 @@ RUN npm run build --prod
 
 FROM nginx:1.27.1-alpine
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /usr/src/app/dist/web-byte-eats /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/web-byte-eats/browser /usr/share/nginx/html
