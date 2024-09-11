@@ -1,0 +1,64 @@
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  name: cx-ubuntu
+
+stages:
+  - stage: PreBuild
+    displayName: Pré Build
+    jobs:
+      - job: BuildAndTest
+        displayName: Build & Test
+        steps:
+          - task: NodeTool@0
+            displayName: 'Install Node.js'
+            inputs:
+              versionSpec: '18.20'
+
+          - script: |
+              npm install
+              npm run build --prod
+            displayName: 'npm install and build'
+
+          - script: |
+              npm run test
+            displayName: 'npm install and build'
+            continueOnError: true
+
+          - task: PublishCodeCoverageResults@2
+            displayName: Publish Code Coverage
+            continueOnError: true
+            inputs:
+              summaryFileLocation: '$(Build.SourcesDirectory)/coverage/**/*cobertura-coverage.xml'
+
+  - stage: Build
+    displayName: Build
+    jobs:
+      - job: DockerBuild
+        displayName: Docker Build & Publish
+        steps:
+          - task: Docker@2
+            displayName: Docker Build
+            inputs:
+              command: build
+              Dockerfile: './Dockerfile'
+              buildContext: '.'
+              repository: byte-eats-web
+              tags: 'latest'
+              
+          - task: CmdLine@2
+            displayName: Docker Save
+            inputs:
+              script: |
+                docker save byte-eats-web:latest | gzip > ./byte-eats-web-latest.tar.gz
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: 'byte-eats-web-latest.tar.gz'
+              artifactName: 'docker-image'
+            displayName: 'Publish Docker Image as tar.gz to Pipeline Artifacts'
