@@ -1,8 +1,8 @@
 <nav class="bg-gray-800 text-white p-4 flex items-center justify-between">
   <div class="base-margin base-margin-left"></div>
     <div class="flex-shrink-0 ">
-      <span class="text-lg font-bold">
-        <a href="/">Byte Eats - Delivery</a>
+      <span class="text-lg font-bold cursor-pointer">
+        <p (click)="navigateTo('/')">Byte Eats - Delivery</p>
       </span>
     </div>
   
@@ -32,10 +32,10 @@
         @if(dropdownOpen){
           <div class="absolute right-0 mt-2 w-48 bg-white text-gray-800 border border-gray-300 rounded-lg shadow-lg">
             <ul>
-              <li><a href="/admin" class="block px-4 py-2 hover:bg-gray-200">Admin Panel</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">My Orders</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Profile</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Logout</a></li>
+              <li><p (click)="navigateTo('/admin')" class="block px-4 py-2 hover:bg-gray-200 cursor-pointer">Admin Panel</p></li>
+              <li><p href="#" class="block px-4 py-2 hover:bg-gray-200 cursor-pointer">My Orders</p></li>
+              <li><p href="#" class="block px-4 py-2 hover:bg-gray-200 cursor-pointer">Profile</p></li>
+              <li><p href="#" class="block px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</p></li>
             </ul>
           </div>
         }      

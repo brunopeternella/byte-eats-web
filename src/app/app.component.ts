@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, Inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
 import { FoodsComponent } from "./pages/foods/foods.component";
 import { NgIf } from '@angular/common';
@@ -11,6 +11,7 @@ import { CartService } from './services/cart.service';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, FoodsComponent, NgIf, CartComponent, ModalComponent],
+  providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -21,7 +22,8 @@ export class AppComponent {
   showCart: boolean = false;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
   ) 
   {
     
@@ -41,5 +43,9 @@ export class AppComponent {
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
   }
 }
