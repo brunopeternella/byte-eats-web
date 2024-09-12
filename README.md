@@ -2,13 +2,25 @@
 
 ## Descrição
 
-Este é um WebApp desenvolvido em Angular que consome a API Byte Eats em .NET para gerenciar e exibir pedidos. O aplicativo é responsivo e possui integração **parcial** com a API, sendo listagem de produtos, criação de pedidos e edição de pedidos (status e se já está pago).
+Este é um WebApp desenvolvido em Angular que consome a API Byte Eats em .NET para gerenciar e exibir pedidos. O aplicativo é responsivo e possui integração **parcial** com a API, sendo listagem de produtos, criação de pedidos e edição de pedidos (status e pagamento).
 
-## Funcionalidades por Rota
+## Rotas
 
 - **/**: Listagem de produtos com suas respectivas propriedades.
 - **/admin**: Painel de administrador, onde há um menu que separado por contexo. **(Atualmente, apenas a página de pedidos)**
 - **/admin/orders**: Acompanhamentos e atualização de pedidos. **(Atualmente não atualiza a página automáticamente)**
+
+## Funcionalidades
+
+### Usuário
+
+- Adição de produtos no carrinho.
+- Criação do pedido (atualmente gera um usuário mock aleatório via API).
+
+### Admin (não há autenticação)
+
+- Acompanhamentos de pedidos no formato Kaban.
+- Atualização de status e pagamento de pedidos.
 
 ## Configuração
 
