@@ -1,5 +1,10 @@
 # Byte Eats Web
 
+## Observação
+
+O WebApp não está configurado para ser 100%.
+**Recomendado acessá-lo via Desktop.**
+
 ## Descrição
 
 Este é um WebApp desenvolvido em Angular que consome a API Byte Eats em .NET para gerenciar e exibir pedidos. O aplicativo é responsivo e possui integração **parcial** com a API, sendo listagem de produtos, criação de pedidos e edição de pedidos (status e pagamento).
