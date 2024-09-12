@@ -1,0 +1,19 @@
+
+.base-margin {
+    /* --margin-base: 225px; */
+    --margin-base: 10%;
+}
+
+.base-margin-left {
+    margin-left: var(--margin-base);
+}
+
+.base-margin-right {
+    margin-right: var(--margin-base);
+}
+
+.base-margin-body {
+    margin-left: var(--margin-base);
+    margin-right: var(--margin-base);
+}
+

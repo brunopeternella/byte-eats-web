@@ -1,4 +1,4 @@
 export class OrderItem {
-    id!: string;
-    quantity!: string;
+    productId!: string;
+    quantity!: number;
 }

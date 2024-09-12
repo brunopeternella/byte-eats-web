@@ -1,0 +1,16 @@
+<div class="flex h-screen">
+    <div class="bg-primary w-64 flex-shrink-0">
+        <ul class="py-4">
+        <li class="px-4 py-5 pb-7 text-2xl font-semibold text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground">Admin Panel</li>
+      
+        <li>
+            <button (click)="navigateTo('orders')"
+                class="px-4 py-2 text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground cursor-pointer">
+                Orders
+            </button>
+        </li>
+      </ul>
+    </div>
+  
+    <router-outlet></router-outlet>
+  </div>

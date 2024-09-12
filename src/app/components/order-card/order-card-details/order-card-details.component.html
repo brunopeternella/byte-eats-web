@@ -1,0 +1,29 @@
+<div class="flex justify-between mt-4">
+    <h2 class="text-xl font-bold">{{ order.id }}</h2>
+    <button (click)="closeModal()">✖</button>
+  </div>
+  <p class="mt-2">{{ order.userName }}</p>
+  <div class="mt-4">
+  </div>
+  <div class="mt-4">
+    <label class="block text-sm">Status:</label>
+    <select [(ngModel)]="order.status"  class="mt-1 block w-full border border-border rounded-md">
+        <option [value]=1>New</option>
+        <option [value]=2>Preparing</option>
+        <option [value]=3>Delivering</option>
+        <option [value]=4>Delivered</option> 
+    </select>
+  </div>
+  <div class="mt-4">
+    <label class="block text-sm">Was Paid:</label>
+    <select [(ngModel)]="order.wasPaid"  class="mt-1 block w-full border border-border rounded-md">
+        <option [value]=true>Yes</option>
+        <option [value]=false>No</option>
+    </select>
+  </div>
+  <div class="flex items-center justify-center mt-4">
+    <button (click)="updateOrder()" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg">
+      Update
+    </button>
+  </div>
+  

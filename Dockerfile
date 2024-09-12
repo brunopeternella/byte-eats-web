@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build --prod
+RUN npm run build --prod -- --base-href="/web/byte-eats/"
 
 FROM nginx:1.27.1-alpine
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf

@@ -37,5 +37,6 @@ export class CardModalComponent extends ModalComponent {
       this.quantity);
 
     this.cartService.add(cartItem);
+    this.closeModal()
   }
 }

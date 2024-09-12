@@ -1,6 +1,9 @@
 <nav class="bg-gray-800 text-white p-4 flex items-center justify-between">
-    <div class="flex-shrink-0" style="margin-left: 225px;">
-      <span class="text-lg font-bold">Byte Eats - Delivery</span>
+  <div class="base-margin base-margin-left"></div>
+    <div class="flex-shrink-0 ">
+      <span class="text-lg font-bold">
+        <a href="/">Byte Eats - Delivery</a>
+      </span>
     </div>
   
     <div class="flex-grow mx-4">
@@ -19,26 +22,31 @@
         <span class="absolute top-6 right-1 block w-4 h-4 bg-red-600 text-white text-xs font-bold rounded-full flex items-center justify-center">{{ cartCount }}</span>
       </button>
   
-      <!-- User Icon with Dropdown -->
-      <div class="relative" style="margin-right: 225px;">
+      <div class="relative">
         <button (click)="toggleDropdown()" class="flex items-center">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
           </svg>
         </button>
-        <div *ngIf="dropdownOpen" class="absolute right-0 mt-2 w-48 bg-white text-gray-800 border border-gray-300 rounded-lg shadow-lg">
-          <ul>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">My Orders</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Profile</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Logout</a></li>
-          </ul>
-        </div>
+
+        @if(dropdownOpen){
+          <div class="absolute right-0 mt-2 w-48 bg-white text-gray-800 border border-gray-300 rounded-lg shadow-lg">
+            <ul>
+              <li><a href="/admin" class="block px-4 py-2 hover:bg-gray-200">Admin Panel</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">My Orders</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Profile</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Logout</a></li>
+            </ul>
+          </div>
+        }      
+
       </div>
     </div>
+    <div class="base-margin base-margin-right"></div>
 </nav>
 
-<div style="margin-left: 225px; margin-right: 225px;">
-  <app-foods ></app-foods>
+<div class="base-margin base-margin-body">
+  <router-outlet></router-outlet>
 </div>
 
 @if(showCart){

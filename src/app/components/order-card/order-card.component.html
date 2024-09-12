@@ -1,0 +1,19 @@
+<div (click)="openCardDetais()" class="bg-white p-4 rounded-lg shadow-md cursor-pointer">
+    <h2 class="text-s text-card-foreground mb-2 font-semibold">{{order.userName}}</h2>
+    <p class="text-xs text-card-foreground mb-2 font-semibold">{{order.id}}</p>
+    <p class="">
+        @for (item of order.items; track item.id) {
+            <span class="font-semibold">{{item.quantity}}x</span> {{item.productName}} <br />
+        }
+    </p>		
+    <p class="text-xm mt-2"><span class="font-semibold">Total:</span> ${{order.totalValue.toFixed(2)}}</p>
+</div>
+
+@if(showOrderCardDetails){
+    <app-modal>
+        <app-order-card-details
+        [order]="order"
+        (close)="closeCardDetails($event)"
+        ></app-order-card-details>
+    </app-modal>
+}  
