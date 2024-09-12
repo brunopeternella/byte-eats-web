@@ -3,6 +3,7 @@
 ## Observação
 
 O WebApp não está configurado para ser 100%.
+
 **Recomendado acessá-lo via Desktop.**
 
 ## Descrição
