@@ -2,7 +2,9 @@
 
 ## Observação
 
-O WebApp não está configurado para ser 100%.
+O WebApp não está configurado para ser 100% responsivo e nem com todos os recursos esperados.
+
+Entenda-o como uma breve e simples demonstração.
 
 **Recomendado acessá-lo via Desktop.**
 
